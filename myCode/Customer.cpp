@@ -6,6 +6,7 @@ Customer::Customer(unsigned int number) : number{number}
 
 unsigned int Customer::getNumber() const
 {
+    return number;
 }
 
 std::string Customer::getId() const
