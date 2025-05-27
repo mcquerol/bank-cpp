@@ -11,6 +11,21 @@ unsigned int Customer::getNumber() const
 
 std::string Customer::getId() const
 {
+    std::string id;
+    int digits = 0;
+    while(number != 0)
+    {
+        number/=10;
+        digits++;
+    }
+    //get the number of digits in number attribute
+    while(id.length() <= (10-digits) )
+    {
+        id+= "0";
+    }
+
+    id+= std::to_string(number);
+    return id;
 }
 
 Customer* Customer::setPersonalData(std::string lastName, std::string firstName, Poco::Data::Date dateOfBirth)
