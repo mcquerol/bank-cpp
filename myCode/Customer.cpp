@@ -34,6 +34,7 @@ Customer* Customer::setPersonalData(std::string lastName, std::string firstName,
 
 const Poco::Data::Date& Customer::getDateOfBirth() const
 {
+    return dateOfBirth;
 }
 
 const std::string& Customer::getFirstName() const
