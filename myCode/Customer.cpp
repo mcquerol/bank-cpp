@@ -50,6 +50,8 @@ const std::string& Customer::getLastName() const
 
 Account* Customer::createAccount(Bank::AccountType type)
 {
+    Account* acc(this,type);
+    return acc;
 }
 
 std::vector<Account*> Customer::allAccounts() const
