@@ -30,6 +30,7 @@ std::string Customer::getId() const
 
 Customer* Customer::setPersonalData(std::string lastName, std::string firstName, Poco::Data::Date dateOfBirth) : lastName{lastName}, firstName{firstName}, dateOfBirth{dateOfBirth}
 {
+    return this;
 }
 
 const Poco::Data::Date& Customer::getDateOfBirth() const
@@ -44,6 +45,7 @@ const std::string& Customer::getFirstName() const
 
 const std::string& Customer::getLastName() const
 {
+    return lastName;
 }
 
 Account* Customer::createAccount(Bank::AccountType type)
