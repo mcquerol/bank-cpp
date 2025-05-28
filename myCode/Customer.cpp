@@ -39,6 +39,7 @@ const Poco::Data::Date& Customer::getDateOfBirth() const
 
 const std::string& Customer::getFirstName() const
 {
+    return firstName;
 }
 
 const std::string& Customer::getLastName() const
