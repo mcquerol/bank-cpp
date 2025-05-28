@@ -54,7 +54,8 @@ const std::string& Customer::getLastName() const
 
 Account* Customer::createAccount(Bank::AccountType type)
 {
-    Account* acc(this,type);
+    Account* acc;
+    acc->Account(this,type);
     return acc;
 }
 
@@ -95,6 +96,15 @@ void Customer::deleteAccount(std::string id)
     }
 }
 
-std::ostream& operator <<(std::ostream &out, const Customer &customer)
+std::ostream& operator<<(std::ostream &out, const Customer &customer)
 {
+    out << customer.getId() << ": "
+        << customer.getLastName() << ", "
+        << customer.getFirstName() << " ("
+        << customer.getDateOfBirth().day() << "/"
+        << customer.getDateOfBirth().month() << "/"
+        << customer.getDateOfBirth().year() << ")\n";
+
+    return out;
 }
+
