@@ -66,6 +66,11 @@ std::vector<Account*> Customer::allAccounts() const
 
 Account* Customer::lookupAccount(std::string id) const
 {
+    if(accounts[id] == nullptr)
+    {
+        throw std::invalid_argument("id does not exist!");
+    }
+    return accounts[id];
 }
 
 void Customer::deleteAccount(std::string id)
