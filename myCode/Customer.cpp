@@ -28,8 +28,12 @@ std::string Customer::getId() const
     return id;
 }
 
-Customer* Customer::setPersonalData(std::string lastName, std::string firstName, Poco::Data::Date dateOfBirth) : lastName{lastName}, firstName{firstName}, dateOfBirth{dateOfBirth}
+Customer* Customer::setPersonalData(std::string lastName, std::string firstName, Poco::Data::Date dateOfBirth)
 {
+    this->lastName = lastName;
+    this->firstName = firstName;
+    this->dateOfBirth = dateOfBirth;
+
     return this;
 }
 
