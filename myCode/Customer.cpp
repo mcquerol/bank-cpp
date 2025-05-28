@@ -75,6 +75,20 @@ Account* Customer::lookupAccount(std::string id) const
 
 void Customer::deleteAccount(std::string id)
 {
+    auto it = accounts.find(id);
+
+    if(it == nullptr)
+    {
+        throw std::invalid_argument("id does not exist!");
+    }
+    if(it->second->getBalance() != 0)
+    {
+        throw std::logic_error("Balance is not 0!");
+    }
+    else
+    {
+        it = nullptr;
+    }
 }
 
 std::ostream& operator <<(std::ostream &out, const Customer &customer)
