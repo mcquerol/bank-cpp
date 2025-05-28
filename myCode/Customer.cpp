@@ -56,6 +56,12 @@ Account* Customer::createAccount(Bank::AccountType type)
 
 std::vector<Account*> Customer::allAccounts() const
 {
+    std::vector<Account*> accountsVector;
+    for(auto account : accounts)
+    {
+        accountsVector.emplace_back(account.second.get());
+    }
+    return accountsVector;
 }
 
 Account* Customer::lookupAccount(std::string id) const
