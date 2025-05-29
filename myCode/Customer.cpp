@@ -14,9 +14,10 @@ std::string Customer::getId() const
 {
     std::string id;
     int digits = 0;
-    while(number != 0)
+    int tempNumber = number;
+    while(tempNumber != 0)
     {
-        number/=10;
+        tempNumber/=10;
         digits++;
     }
     //get the number of digits in number attribute
