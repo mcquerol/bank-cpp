@@ -1,4 +1,5 @@
 #include "Customer.h"
+#include "Account.h"
 
 Customer::Customer(unsigned int number) : number{number}
 {
@@ -54,9 +55,10 @@ const std::string& Customer::getLastName() const
 
 Account* Customer::createAccount(Bank::AccountType type)
 {
-    Account* acc;
-    acc->Account(this,type);
-    return acc;
+    auto acc = std::make_unique<Account>(this, type);  // create unique_ptr
+    Account* rawPtr = acc.get();                       // get raw pointer before moving
+    accounts[rawPtr->getId()] = std::move(acc);        // store in map
+    return rawPtr;
 }
 
 std::vector<Account*> Customer::allAccounts() const
