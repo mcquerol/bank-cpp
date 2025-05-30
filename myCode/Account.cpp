@@ -19,6 +19,7 @@ std::string Account::getId() const
 
 float Account::getBalance() const
 {
+    return balance;
 }
 
 void Account::transact(float amount)
