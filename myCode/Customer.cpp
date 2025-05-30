@@ -74,11 +74,13 @@ std::vector<Account*> Customer::allAccounts() const
 
 Account* Customer::lookupAccount(std::string id) const
 {
-    if(accounts[id] == nullptr)
+    auto accountPtr = accounts.at(id).get();
+
+    if(accountPtr == nullptr)
     {
         throw std::invalid_argument("id does not exist!");
     }
-    return accounts[id];
+    return accountPtr;
 }
 
 void Customer::deleteAccount(std::string id)
@@ -95,7 +97,7 @@ void Customer::deleteAccount(std::string id)
     }
     else
     {
-        it = nullptr;
+        *it = nullptr;
     }
 }
 
@@ -110,4 +112,3 @@ std::ostream& operator<<(std::ostream &out, const Customer &customer)
 
     return out;
 }
-
