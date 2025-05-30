@@ -14,6 +14,7 @@ Account::~Account()
 
 std::string Account::getId() const
 {
+    return id;
 }
 
 float Account::getBalance() const
