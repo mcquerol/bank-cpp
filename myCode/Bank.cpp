@@ -17,7 +17,7 @@ Customer* Bank::lookupCustomer(std::string id) const
 std::vector<Customer*> Bank::allCustomers() const
 {
     std::vector<Customer*> customerVector;
-    for(auto customer : customers)
+    for(const auto &customer : customers)
     {
         customerVector.emplace_back(customer.second.get());
     }
