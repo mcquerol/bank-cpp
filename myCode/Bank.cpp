@@ -11,7 +11,7 @@ Customer* Bank::createCustomer()
 
 Customer* Bank::lookupCustomer(std::string id) const
 {
-    return customers[id];
+    return customers.at(id).get();
 }
 
 std::vector<Customer*> Bank::allCustomers() const
