@@ -3,9 +3,8 @@
 
 Customer* Bank::createCustomer()
 {
-    Customer* customer(nextCustomerNumber);
-    std::unique_ptr<Customer> customerPtr = std::make_unique<Customer>(customer);
-    customers.emplace(customerPtr);
+    auto customer = std::make_unique<Customer>(nextCustomerNumber);
+    customers.emplace(customer);
     nextCustomerNumber++;
     return customer;
 }
