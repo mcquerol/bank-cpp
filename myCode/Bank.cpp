@@ -4,7 +4,7 @@
 Customer* Bank::createCustomer()
 {
     auto customer = std::make_unique<Customer>(nextCustomerNumber);
-    customers.emplace(customer);
+    customers[customer->getId()] = std::move(customer);
     nextCustomerNumber++;
     return customer;
 }
