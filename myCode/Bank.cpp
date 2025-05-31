@@ -1,4 +1,5 @@
 #include "Bank.h"
+#include "Customer.h"
 
 Customer* Bank::createCustomer()
 {
