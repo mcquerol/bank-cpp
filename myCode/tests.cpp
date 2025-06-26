@@ -54,16 +54,19 @@ void bankTests () {
      * Create a bank and initialize it with setupBank.
      */
     // Add your code here:
+        Bank bank;
 
     /*
      * (1) Assert that the bank has three customers.
      */
     // Add your code here:
+        assertTrue(bank.allCustomers().size() == 3, "bank does not have 3 customers");
 
    /*
     * (2) Assert that the customer with id 0000000002 can be looked up.
     */
     // Add your code here:
+
 
    /*
     * (3) Assert that there is no customer with id 0000000042.
