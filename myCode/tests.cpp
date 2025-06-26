@@ -100,7 +100,7 @@ void accountTests () {
      * Create a bank and initialize it with setupBank.
      */
     // Add your code here:
-
+        Bank Bank2;
     /*
      * (1) Lookup Customer 0000000001 (Alice), assert that she is found.
      */
