@@ -105,6 +105,14 @@ void accountTests () {
      * (1) Lookup Customer 0000000001 (Alice), assert that she is found.
      */
     // Add your code here:
+        auto AliceLookupQuery = Bank2.lookupCustomer("0000000001");
+        auto AliceSearchQuery = find(Bank2.allCustomers().begin(), Bank2.allCustomers().end(), AliceLookupQuery);
+        bool AliceFound = false;
+        if(AliceSearchQuery != Bank2.allCustomers().end())
+        {
+            AliceFound = true;
+        }
+        assertTrue(AliceFound, "Alice was not found in the bank")
 
     /*
      * (2) Assert that Alice has 5 accounts.
