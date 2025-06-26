@@ -55,6 +55,7 @@ void bankTests () {
      */
     // Add your code here:
         Bank bank;
+        setupBank(bank);
 
     /*
      * (1) Assert that the bank has three customers.
@@ -101,6 +102,7 @@ void accountTests () {
      */
     // Add your code here:
         Bank Bank2;
+        setupBank(Bank2);
     /*
      * (1) Lookup Customer 0000000001 (Alice), assert that she is found.
      */
