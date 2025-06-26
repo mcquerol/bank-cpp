@@ -60,7 +60,8 @@ void bankTests () {
      * (1) Assert that the bank has three customers.
      */
     // Add your code here:
-        assertTrue(bank.allCustomers().size() == 3, "bank does not have 3 customers");
+        auto customerCountQuery = bank.allCustomers().size();
+        assertTrue(customerCountQuery == 3, "bank does not have 3 customers");
 
    /*
     * (2) Assert that the customer with id 0000000002 can be looked up.
@@ -72,6 +73,8 @@ void bankTests () {
     * (3) Assert that there is no customer with id 0000000042.
     */
     // Add your code here:
+
+
 
 }
 
