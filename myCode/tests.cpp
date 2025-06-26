@@ -120,6 +120,8 @@ void accountTests () {
      * (2) Assert that Alice has 5 accounts.
      */
     // Add your code here:
+        auto AliceAccountCount= AliceLookupQuery->allAccounts().size();
+        assertTrue(AliceAccountCount == 5, "Alice does not have 5 accounts");
 
     /**
      * (3) Assert that the C++-types of Alice's accounts and the
