@@ -75,7 +75,12 @@ void bankTests () {
     */
     // Add your code here:
         auto customerSearchQuery = find(bank.allCustomers().begin(), bank.allCustomers().end(), bank.lookupCustomer("0000000042"));
-        assertTrue(customerSearchQuery, "Customer with id 0000000042 not found");
+        bool customerFound = false;
+        if(customerSearchQuery != bank.allCustomers().end())
+        {
+            customerFound = true;
+        }
+        assertTrue(customerFound, "Customer with id 0000000042 not found");
 
 
 }
