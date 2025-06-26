@@ -66,7 +66,7 @@ void bankTests () {
     * (2) Assert that the customer with id 0000000002 can be looked up.
     */
     // Add your code here:
-
+        assertTrue(bank.lookupCustomer("0000000002") != nullptr, "customer with id 0000000002 cannot be looked up");
 
    /*
     * (3) Assert that there is no customer with id 0000000042.
