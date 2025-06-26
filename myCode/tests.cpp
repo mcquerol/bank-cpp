@@ -74,7 +74,8 @@ void bankTests () {
     * (3) Assert that there is no customer with id 0000000042.
     */
     // Add your code here:
-
+        auto customerSearchQuery = find(bank.allCustomers().begin(), bank.allCustomers().end(), bank.lookupCustomer("0000000042"));
+        assertTrue(customerSearchQuery, "Customer with id 0000000042 not found");
 
 
 }
