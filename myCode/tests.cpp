@@ -129,6 +129,11 @@ void accountTests () {
      * match.
      */
     // Add your code here:
+        auto AliceAccounts = AliceLookupQuery->allAccounts();
+        for(const auto& account : AliceAccounts)
+        {
+            assertTrue(account->accountType(AliceLookupQuery) == Account::accountType(AliceLookupQuery), "Account types do not match");
+        }
 
     /**
      * (4) Assert that Alice has 3 accounts of type CD
