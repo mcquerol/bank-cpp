@@ -114,7 +114,7 @@ void accountTests () {
         {
             AliceFound = true;
         }
-        assertTrue(AliceFound, "Alice was not found in the bank")
+        assertTrue(AliceFound, "Alice was not found in the bank");
 
     /*
      * (2) Assert that Alice has 5 accounts.
