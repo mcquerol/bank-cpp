@@ -120,7 +120,7 @@ void accountTests () {
      * (2) Assert that Alice has 5 accounts.
      */
     // Add your code here:
-        auto AliceAccountCount= AliceLookupQuery->allAccounts().size();
+        auto AliceAccountCount = AliceLookupQuery->allAccounts().size();
         assertTrue(AliceAccountCount == 5, "Alice does not have 5 accounts");
 
     /**
@@ -132,7 +132,7 @@ void accountTests () {
         auto AliceAccounts = AliceLookupQuery->allAccounts();
         for(const auto& account : AliceAccounts)
         {
-            assertTrue(account->accountType(AliceLookupQuery) == Account::accountType(AliceLookupQuery), "Account types do not match");
+            assertTrue(account->accountType(AliceLookupQuery->getId()) == Account::accountType(AliceLookupQuery->getId()), "Account types do not match");
         }
 
     /**
@@ -149,11 +149,13 @@ void accountTests () {
      */
     // Add your code here:
 
+
     /**
      * (5) Assert that an attempt to delete account 3040000001
      * throws an invalid_argument exception.
      */
     // Add your code here:
+
 
      /**
       * (6) Assert that an attempt to delete account 3020000001
