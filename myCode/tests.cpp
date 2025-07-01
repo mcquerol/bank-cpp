@@ -148,7 +148,21 @@ void accountTests () {
      *    the expected ids.
      */
     // Add your code here:
+        set<string> CDAccountIDsSet;
+        for(const auto& account : AliceAccounts)
+        {
+            string AccountID = account->getId();
+            if(account->accountType(AccountID) == Bank::AccountType::CD)
+            {
+                CDAccountIDsSet.emplace(AccountID);
+            }
+        }
 
+        bool firstIDFound = CDAccountIDsSet.find("3010000001") != CDAccountIDsSet.end();
+        bool SecondIDFound = CDAccountIDsSet.find("3020000001") != CDAccountIDsSet.end();
+        bool ThirdIDFound = CDAccountIDsSet.find("3030000001") != CDAccountIDsSet.end();
+
+        assertTrue(firstIDFound && SecondIDFound && ThirdIDFound, "Set does not contain specific IDs");
 
     /**
      * (5) Assert that an attempt to delete account 3040000001
