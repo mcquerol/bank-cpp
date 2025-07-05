@@ -185,7 +185,16 @@ void accountTests () {
       * throws a logic_error exception.
       */
     // Add your code here:
-
+        bool deleteAttempt = true;
+        try
+        {
+           AliceLookupQuery->deleteAccount("3020000001");
+        }
+        catch (const std::logic_error &e)
+        {
+            deleteAttempt = false;
+            assertTrue(deleteAttempt, "Failed to delete account 3040000001, logic error exception");
+        }
 
       /**
        * (7) Withdraw the deposit from account 3010000001,
