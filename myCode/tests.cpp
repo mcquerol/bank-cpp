@@ -169,13 +169,14 @@ void accountTests () {
      * throws an invalid_argument exception.
      */
     // Add your code here:
-        bool deleteAttempt = false;
+        bool deleteAttempt = true;
         try
         {
            AliceLookupQuery->deleteAccount("3040000001");
         }
         catch (const std::invalid_argument &e)
         {
+            deleteAttempt = false;
             assertTrue(deleteAttempt, "Failed to delete account 3040000001");
         }
 
@@ -184,6 +185,7 @@ void accountTests () {
       * throws a logic_error exception.
       */
     // Add your code here:
+
 
       /**
        * (7) Withdraw the deposit from account 3010000001,
