@@ -169,7 +169,15 @@ void accountTests () {
      * throws an invalid_argument exception.
      */
     // Add your code here:
-
+        bool deleteAttempt = false;
+        try
+        {
+           AliceLookupQuery->deleteAccount("3040000001");
+        }
+        catch (const std::invalid_argument &e)
+        {
+            assertTrue(deleteAttempt, "Failed to delete account 3040000001");
+        }
 
      /**
       * (6) Assert that an attempt to delete account 3020000001
