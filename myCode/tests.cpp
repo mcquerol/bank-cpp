@@ -202,6 +202,11 @@ void accountTests () {
        * 4 accounts left
        */
     // Add your code here:
+        auto accountToWithdraw = AliceLookupQuery->lookupAccount("3010000001");
+        float amountToWithdraw = accountToWithdraw->getBalance();
+        accountToWithdraw->transact(amountToWithdraw);
+        AliceLookupQuery->deleteAccount("3010000001");
+        assertTrue(AliceAccountCount == 4, "Alice does not have 4 accounts");
 
       /**
        * (8) Lookup Alice's account 1010000001, create
