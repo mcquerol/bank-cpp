@@ -177,7 +177,7 @@ void accountTests () {
         catch (const std::invalid_argument &e)
         {
             deleteAttempt = false;
-            assertTrue(deleteAttempt, "Failed to delete account 3040000001");
+            assertTrue(deleteAttempt, "Failed to delete account 3040000001, invalid argument exception");
         }
 
      /**
