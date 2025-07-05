@@ -215,7 +215,13 @@ void accountTests () {
        * is 100.
        */
     // Add your code here:
+        auto accountToCreateJsonObject = AliceLookupQuery->lookupAccount("1010000001");
+        auto JsonObject = accountToCreateJsonObject->toJson();
 
+        Bank::AccountType JsonObjectAccountType = JsonObject->getValue<Bank::AccountType>("Type");
+        float JsonObjectAccountBalance = JsonObject->getValue<float>("Balance");
+
+        assertTrue(JsonObjectAccountType == "Current" && JsonObjectAccountBalance == 100.0 , "Account type is not current and the balance is not 100");
 }
 
 void allTests() {
